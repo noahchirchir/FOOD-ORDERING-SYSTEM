@@ -26,7 +26,7 @@ class Customer(Base):
     def get_by_id(cls, customer_id):
         return session.query(cls).filter_by(id=customer_id).first()
 
-    # Other ORM methods for Customer class
+    # Other ORM method for Customer class
 
 class Menu(Base):
     __tablename__ = 'menu'
@@ -35,7 +35,7 @@ class Menu(Base):
     item_name = Column(String, nullable=False)
     price = Column(Float, nullable=False)
 
-    # ORM methods for Menu class
+    # ORM method for Menu class
 
 class Review(Base):
     __tablename__ = 'reviews'
@@ -50,7 +50,7 @@ class Review(Base):
     customer = relationship('Customer', back_populates='reviews')
     menu = relationship('Menu')
 
-    # ORM methods for Review class
+    # ORM method for Review class
 
 class Order(Base):
     __tablename__ = 'orders'
@@ -73,7 +73,7 @@ class Order(Base):
     def get_by_id(cls, order_id):
         return session.query(cls).filter_by(order_id=order_id).first()
 
-    # Other ORM methods for Order class
+    # Other ORM method for Order class
 
 class OrderItem(Base):
     __tablename__ = 'order_items'
@@ -86,7 +86,7 @@ class OrderItem(Base):
     order = relationship('Order', back_populates='order_items')
     menu = relationship('Menu')
 
-    # ORM methods for OrderItem class
+    # ORM method for OrderItem class
 
 # Create the database engine and tables
 engine = create_engine('sqlite:///food_ordering.db')
