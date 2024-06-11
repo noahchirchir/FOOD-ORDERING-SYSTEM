@@ -4,7 +4,7 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -255,
+    "scrollTop": -848,
     "scrollLeft": -9.9999,
     "zoomLevel": 1,
     "show": 431,
@@ -80,7 +80,7 @@
       },
       "pkBJpwm-eJv4WVBkBB0QQ": {
         "id": "pkBJpwm-eJv4WVBkBB0QQ",
-        "name": "PRICES",
+        "name": "CUSTOMERS",
         "comment": "",
         "columnIds": [
           "hPEwtRf369I0ZZnVDH5_l",
@@ -105,12 +105,12 @@
           "x": 649,
           "y": 558,
           "zIndex": 44,
-          "widthName": 60,
+          "widthName": 71,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1718098490589,
+          "updateAt": 1718132492365,
           "createAt": 1718036711914
         }
       },
@@ -899,7 +899,7 @@
       1718036711912,
       -1,
       {
-        "name": 1718093049362
+        "name": 1718132492363
       }
     ],
     "hPEwtRf369I0ZZnVDH5_l": [
