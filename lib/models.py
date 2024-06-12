@@ -1,10 +1,15 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Float
-from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Float, create_engine
+from sqlalchemy.orm import relationship, declarative_base, sessionmaker
 from datetime import datetime
 
+
 Base = declarative_base()
+
+
+engine = create_engine('sqlite:///food_ordering.db')
+
+Session = sessionmaker(bind=engine)
+session = Session()
 
 class Customer(Base):
     __tablename__ = 'customers'
@@ -22,6 +27,10 @@ class Customer(Base):
         session.add(new_customer)
         session.commit()
         return new_customer
+    
+    @classmethod
+    def get_all(cls):
+        return session.query(cls).all()
 
     @classmethod
     def get_by_id(cls, customer_id):
@@ -47,6 +56,19 @@ class Review(Base):
 
     customer = relationship('Customer', back_populates='reviews')
     menu = relationship('Menu')
+
+    @classmethod
+    def update(cls, review_id, rating=None, comment=None):
+        review = session.query(Review).filter_by(id=review_id).first()
+        if review:
+            if rating is not None:
+                review.rating = rating
+            if comment is not None:
+                review.comment = comment
+            session.commit()
+            return review
+        else:
+            return None
 
 
 class Order(Base):
@@ -81,6 +103,5 @@ class OrderItem(Base):
     order = relationship('Order', back_populates='order_items')
     menu = relationship('Menu')
 
-# Create the database engine and tables
-engine = create_engine('sqlite:///food_ordering.db')
-Base.metadata.create_all(engine)
+
+

@@ -9,3 +9,4 @@ INSERT INTO customers (name, email) VALUES
 ('Sophia Wanuna', 'sophia@gmail.com'),
 ('James Koech', 'james@gmail.com'),
 ('Olivia Gatete', 'olivia@gmail.com');
+
