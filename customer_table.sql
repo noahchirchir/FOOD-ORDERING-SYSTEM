@@ -1,4 +1,4 @@
-INSERT INTO customer (name, email) VALUES
+INSERT INTO customers (name, email) VALUES
 ('John Ruto', 'john@gmail.com'),
 ('Alice Musyoka', 'alice@gmail.com'),
 ('Bob Odinga', 'bob@gmail.com'),
@@ -9,3 +9,4 @@ INSERT INTO customer (name, email) VALUES
 ('Sophia Wanuna', 'sophia@gmail.com'),
 ('James Koech', 'james@gmail.com'),
 ('Olivia Gatete', 'olivia@gmail.com');
+
